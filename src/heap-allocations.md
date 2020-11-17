@@ -145,7 +145,7 @@ heap allocation if the number of elements exceeds that. (Note also that
 `SmallVec` reliably reduces the allocation rate when used appropriately, but
 its use does not guarantee improved performance. It is slightly slower than
 `Vec` for normal operations because it must always check if the elements are
-heap-allocated or not. Also, If `N` is high or `T` is large, then the
+heap-allocated or not. Also, if `N` is high or `T` is large, then the
 `SmallVec<[T; N]>` itself can be larger than `Vec<T>`, and copying of
 `SmallVec` values will be slower. As always, benchmarking is required to
 confirm that an optimization is effective.
@@ -171,7 +171,7 @@ one at a time would result in four allocations (for capacities of 4, 8, 16, and
 [`Vec::reserve_exact`]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.reserve_exact
 
 If you know the maximum length of a vector, the above functions also let you
-not allocate excess space unnecessary. Similarly, [`Vec::shrink_to_fit`] can be
+not allocate excess space unnecessarily. Similarly, [`Vec::shrink_to_fit`] can be
 used to minimize wasted space, but note that it may cause a reallocation.
 
 [`Vec::shrink_to_fit`]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.shrink_to_fit
